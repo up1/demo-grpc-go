@@ -1,0 +1,20 @@
+syntax="proto3";
+
+package hello;
+
+option go_package = "demo/hello";
+
+// Message structure
+message Hello {
+    int32 id = 1;
+    string message = 2;
+}
+
+message HelloResponse {
+    int32 id = 1;
+    string message = 2;
+}
+
+service HelloWorld {
+    rpc SayHi (Hello) returns (HelloResponse);
+}
